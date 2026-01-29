@@ -1,4 +1,4 @@
-	<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
   <title>Manor Beauty Bloc</title>
@@ -18,9 +18,10 @@
     h2, h3 { color: #D4AF37; }
 
     /* Header Title */
-    header#header { text-align: center; padding: 2em 0; }
-    .logo { font-family: 'Dancing Script', cursive; font-size: 3em; color: #D4AF37; margin: 0; line-height: 1; }
-    header#header p { font-family: 'Quicksand', sans-serif; color: #fff; font-size: 1.2em; margin-top: 0.5em; }
+    header#header { text-align: center; padding: 6em 2em; background: url('assets/images/header-bg.jpg') no-repeat center center; background-size: cover; position: relative; color: #fff; }
+    header#header::before { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:0; }
+    .logo { font-family: 'Dancing Script', cursive; font-size: 3em; color: #D4AF37; margin:0; line-height:1; position: relative; z-index:1; }
+    header#header p { font-family: 'Quicksand', sans-serif; color: #fff; font-size: 1.2em; margin-top: 0.5em; position: relative; z-index:1; }
 
     /* Intro Section */
     #intro { text-align: center; padding: 6em 2em; }
@@ -39,6 +40,7 @@
     footer p { color:#fff; margin-bottom:2em; }
     footer ul.actions { list-style:none; padding:0; display:flex; justify-content:center; gap:1em; }
     footer ul.actions li a.button { padding:12px 28px; border-radius:25px; font-weight:bold; }
+    footer ul.actions li a.button:hover { background:#fff; color:#D4AF37; transition:0.3s; }
 
     #copyright { text-align:center; margin:2em 0; color:#fff; font-size:0.9em; }
 
@@ -47,6 +49,9 @@
     #nav ul.links li { margin:0 1em; }
     #nav ul.links li a { color:#fff; font-weight:600; padding:0.5em 1em; transition:0.3s; text-decoration:none; }
     #nav ul.links li a:hover { color:#D4AF37; }
+
+    /* Smooth scroll links hover */
+    a.scrolly:hover { background:#fff; color:#D4AF37; transition:0.3s; }
   </style>
 </head>
 
@@ -56,8 +61,8 @@
 
   <!-- Intro -->
   <div id="intro">
-    <h1>Welcome to Manor Beauty Bloc</h1>
-    <p>Your neighborhood Beauty Supply Store  & Salon!</p>
+    <h1>Welcome to</h1>
+    <p>Your neighborhood beauty supply & community hangout</p>
     <ul class="actions">
       <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
     </ul>
@@ -66,15 +71,15 @@
   <!-- Header -->
   <header id="header">
     <h1 class="logo">Manor Beauty Bloc</h1>
-    <p>Your neighborhood Beauty Supply Store & Salon!</p>
+    <p>Your neighborhood beauty supply & community hangout</p>
   </header>
 
   <!-- Nav -->
   <nav id="nav">
     <ul class="links">
-      <li class="active"><a href="#about">About</a></li>
-      <li><a href="#visit">Visit</a></li>
-      <li><a href="#connect">Connect</a></li>
+      <li class="active"><a href="#about" class="scrolly">About</a></li>
+      <li><a href="#visit" class="scrolly">Visit</a></li>
+      <li><a href="#connect" class="scrolly">Connect</a></li>
     </ul>
   </nav>
 
@@ -86,9 +91,11 @@
       <header class="major">
         <h2>Welcome</h2>
         <p>
-          Manor Beauty Bloc is your local spot for quality beauty products at affordable prices. Come shop, browse, network, or just chat with another neighbor —
+          Manor Beauty Bloc is your local spot for beauty essentials, good vibes,
+          and community. Come shop, browse, network, or just chat with another neighbor —
           you’re always welcome here.
         </p>
+        <a href="#visit" class="button scrolly">Visit Us</a>
       </header>
       <a href="#" class="image main"><img src="assets/images/store-placeholder.jpg" alt="Store" /></a>
     </article>
@@ -105,6 +112,7 @@
           Support for local stylists & vendors<br />
           Pop-ups, food days & community events
         </p>
+        <a href="#connect" class="button scrolly">Connect With Us</a>
         <a href="#" class="image main"><img src="assets/images/products-placeholder.jpg" alt="Products" /></a>
       </article>
 
@@ -120,6 +128,7 @@
           Friday & Saturday: 10:00am – 8:30pm<br>
           Sunday: Closed
         </p>
+        <a href="https://goo.gl/maps/INSERT-MAP-LINK" target="_blank" class="button">Get Directions</a>
         <a href="#" class="image main"><img src="assets/images/storefront-placeholder.jpg" alt="Storefront" /></a>
       </article>
     </section>
@@ -156,4 +165,3 @@
 
 </body>
 </html>
-
