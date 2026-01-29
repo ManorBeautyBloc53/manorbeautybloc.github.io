@@ -5,36 +5,43 @@
   <title>Manor Beauty Bloc</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
       background: #ffffff;
       color: #000000;
-      text-align: center;
     }
     header {
       background: #000;
       color: #fff;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.3em;
       letter-spacing: 2px;
     }
     header p {
       color: #D4AF37;
       font-size: 1.1em;
-      margin-top: 10px;
+      margin-top: 12px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
     }
     section {
-      padding: 50px 20px;
-      max-width: 800px;
-      margin: auto;
+      padding: 50px 10px;
+      text-align: center;
     }
     h2 {
       color: #D4AF37;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .divider {
       width: 60px;
@@ -42,27 +49,81 @@
       background: #D4AF37;
       margin: 20px auto;
     }
+    .buttons {
+      text-align: center;
+      padding-bottom: 40px;
+    }
     .buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 12px 25px;
+      padding: 14px 28px;
       background: #D4AF37;
       color: #000;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 25px;
+      border-radius: 30px;
     }
     footer {
       background: #000;
       color: #fff;
-      padding: 20px;
+      text-align: center;
+      padding: 25px;
       font-size: 0.9em;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>MANOR BEAUTY BLOC</h1>
   <p>Your neighborhood beauty supply & community hangout</p>
-</hea
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>Welcome</h2>
+    <div class="divider"></div>
+    <p>
+      Welcome to Manor Beauty Bloc — your local spot for beauty essentials,
+      good vibes, and community. Come shop, browse, or just talk to another adult —
+      you’re always welcome here.
+    </p>
+  </section>
+
+  <section>
+    <h2>What We Offer</h2>
+    <div class="divider"></div>
+    <p>
+      Hair & beauty essentials • Natural hair & protective style products •
+      Support for local stylists & vendors • Pop-ups, food days & community events
+    </p>
+  </section>
+
+  <section>
+    <h2>Visit Us</h2>
+    <div class="divider"></div>
+    <p>
+      📍 13419 US-290 E, Building 9<br><br>
+      🕒 <strong>Store Hours</strong><br>
+      Monday – Thursday: 10:00am – 8:00pm<br>
+      Friday & Saturday: 10:00am – 8:30pm<br>
+      Sunday: Closed
+    </p>
+  </section>
+
+  <div class="buttons">
+    <a href="#">Get Directions</a>
+    <a href="#">Call Us</a>
+    <a href="#">Instagram</a>
+  </div>
+
+</div>
+
+<footer>
+  © Manor Beauty Bloc • Built with love for the community
+</footer>
+
+</body>
+</html>
