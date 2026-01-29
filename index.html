@@ -1,25 +1,130 @@
-<!-- Intro -->
-<div id="intro">
-  <h1>Welcome to</h1>
-  <p>Your neighborhood beauty supply & community hangout</p>
-  <ul class="actions">
-    <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-  </ul>
-</div>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Manor Beauty Bloc</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-<!-- Header -->
-<header id="header">
-  <h1 class="logo">Manor Beauty Bloc</h1>
-</header>
+  <!-- Fonts from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- Nav -->
-<nav id="nav">
-  <ul class="links">
-    <li class="active"><a href="#about">About</a></li>
-    <li><a href="#visit">Visit</a></li>
-    <li><a href="#connect">Connect</a></li>
-  </ul>
-</nav>
+  <style>
+    /* Body and general text */
+    body { background: #000000; color: #FFFFFF; font-family: 'Quicksand', sans-serif; margin:0; padding:0; }
+
+    /* Intro section */
+    #intro {
+      text-align: center;
+      padding: 6em 2em;
+    }
+
+    #intro h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2.5em;
+      color: #FFFFFF;
+      margin-bottom: 0.5em;
+    }
+
+    #intro p {
+      font-size: 1.2em;
+      color: #FFFFFF;
+      margin-bottom: 2em;
+    }
+
+    /* Header title */
+    header#header {
+      text-align: center;
+      background: #000;
+      padding: 2em 0;
+    }
+
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      color: #D4AF37;  /* Gold accent */
+      margin: 0;
+      line-height: 1;
+    }
+
+    /* Navigation */
+    #nav ul.links {
+      display: flex;
+      justify-content: center;
+      padding: 1em 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    #nav ul.links li {
+      margin: 0 1em;
+    }
+
+    #nav ul.links li a {
+      color: #FFFFFF;
+      font-family: 'Quicksand', sans-serif;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5em 1em;
+      transition: 0.3s;
+    }
+
+    #nav ul.links li a:hover {
+      color: #D4AF37;
+    }
+
+    /* Major headings and buttons */
+    .major h2 { color: #D4AF37 !important; font-family: 'Quicksand', sans-serif; }
+    a, .button { background: #D4AF37 !important; color: #000 !important; font-weight: bold; border-radius: 30px; padding: 14px 28px; }
+    .actions a.button { text-decoration: none; display: inline-block; }
+
+    /* Sections */
+    .major p, .posts p { font-size: 1.1em; line-height: 1.6em; }
+    article.post { margin-bottom: 3em; text-align: center; }
+    article.post img { max-width: 100%; height: auto; border-radius: 10px; margin-top: 1em; }
+
+    /* Footer */
+    footer#footer { background: #000; padding: 3em 2em; text-align: center; }
+    footer h2 { font-family: 'Quicksand', sans-serif; color: #D4AF37; margin-bottom: 1em; }
+    footer p { color: #FFFFFF; margin-bottom: 2em; }
+    footer ul.actions { list-style: none; padding: 0; display: flex; justify-content: center; gap: 1em; }
+    footer ul.actions li a.button { padding: 12px 28px; border-radius: 25px; font-weight: bold; }
+
+    #copyright { text-align:center; margin:2em 0; color:#FFFFFF; font-size:0.9em; }
+
+    /* Scroll button */
+    .actions a.button.icon.solo { background: #D4AF37; color:#000; font-weight:bold; border-radius:30px; padding:14px 28px; }
+
+  </style>
+</head>
+
+<body class="is-preload">
+
+<div id="wrapper" class="fade-in">
+
+  <!-- Intro -->
+  <div id="intro">
+    <h1>Welcome to</h1>
+    <p>Your neighborhood beauty supply & community hangout</p>
+    <ul class="actions">
+      <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+    </ul>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <h1 class="logo">Manor Beauty Bloc</h1>
+  </header>
+
+  <!-- Nav -->
+  <nav id="nav">
+    <ul class="links">
+      <li class="active"><a href="#about">About</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
 
   <!-- Main -->
   <div id="main">
@@ -89,6 +194,7 @@
 
 </div>
 
+<!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -99,4 +205,3 @@
 
 </body>
 </html>
-
