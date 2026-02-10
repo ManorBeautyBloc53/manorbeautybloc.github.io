@@ -2,62 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Manor Beauty Bloc</title>
+  <title>Manor Beauty Bloc | Beauty Supply & Salon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
     :root {
       --neon-pink: #ff2d75;
       --gold-glow: #f59e0b;
-      --bg-black: #000;
-      --zinc-900: #18181b;
-      --zinc-800: #27272a;
+      --bg-dark: #000;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
     }
 
     body {
-      background: var(--bg-black);
+      background: var(--bg-dark);
       color: #fff;
       overflow-x: hidden;
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #000; }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, var(--neon-pink), var(--gold-glow));
-      border-radius: 10px;
-    }
-
-    /* HERO WITH IMAGE */
+    /* ===== HERO ===== */
     .hero {
-      height: 100vh;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: url("assets/mbb-hero.png") center center / cover no-repeat;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
+      min-height: 100vh;
+      width: 100%;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("Assets/mbb-hero.png") center / cover no-repeat;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 1rem;
+      padding: 20px;
     }
 
-    .hero-overlay h1 {
-      font-size: clamp(2.5rem, 7vw, 5rem);
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
       font-weight: 800;
       background: linear-gradient(90deg, var(--neon-pink), var(--gold-glow));
       -webkit-background-clip: text;
@@ -66,303 +49,190 @@
       text-shadow: 0 0 20px rgba(255, 45, 117, 0.6);
     }
 
-    .hero-overlay p {
-      margin-top: 0.75rem;
+    .hero p {
+      margin-top: 16px;
+      font-size: 1.1rem;
       color: var(--gold-glow);
       text-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
     }
 
-    .hero-overlay .sub {
-      margin-top: 1.5rem;
-      opacity: 0.85;
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 20px;
     }
 
-    /* SCROLL SECTION */
-    .scroll-section {
-      height: 300vh;
-      position: relative;
+    .section-dark {
+      background: #050505;
     }
 
-    .canvas-wrap {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      color: var(--neon-pink);
+    }
+
+    /* ===== FEATURES / IMAGES ===== */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #0d0d0d;
+      border-radius: 16px;
       overflow: hidden;
-      background: black;
+      box-shadow: 0 0 20px rgba(255,45,117,0.15);
+      transition: transform 0.2s ease;
     }
 
-    canvas {
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card img {
       width: 100%;
-      height: 100%;
+      height: 220px;
+      object-fit: cover;
       display: block;
     }
 
-    .overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.4);
-      opacity: 0;
-      transition: opacity 0.2s linear;
-      pointer-events: none;
+    .feature-card h3 {
+      padding: 16px;
+      color: var(--gold-glow);
+      text-align: center;
     }
 
-    .overlay h2 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--neon-pink);
-      border-bottom: 2px solid var(--gold-glow);
-      padding-bottom: 0.5rem;
-      text-shadow: 0 0 15px rgba(255,45,117,0.6);
-    }
-
-    /* REQUEST SECTION */
-    .request {
-      min-height: 100vh;
-      background: #09090b;
-      padding: 5rem 1.5rem;
-      position: relative;
-      z-index: 20;
-    }
-
-    .request-inner {
-      max-width: 1000px;
-      margin: 0 auto;
+    /* ===== REQUEST FORM ===== */
+    .request-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 40px;
     }
 
     @media (min-width: 768px) {
-      .request-inner {
+      .request-grid {
         grid-template-columns: 1fr 1fr;
+        align-items: center;
       }
     }
 
-    .request h3 {
-      font-size: 2rem;
-      color: var(--neon-pink);
-      margin-bottom: 1.5rem;
-    }
-
-    .request form {
+    form {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 16px;
     }
 
-    .request input,
-    .request textarea {
-      padding: 0.75rem;
-      background: var(--zinc-900);
-      border: 1px solid var(--zinc-800);
-      border-radius: 6px;
+    input, textarea {
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #222;
+      background: #0d0d0d;
       color: #fff;
       font-size: 1rem;
     }
 
-    .request input:focus,
-    .request textarea:focus {
+    input:focus, textarea:focus {
       outline: none;
       border-color: var(--neon-pink);
     }
 
-    .request button {
-      margin-top: 0.5rem;
-      padding: 0.75rem 1.5rem;
+    button {
+      margin-top: 10px;
+      padding: 14px;
       border: none;
       border-radius: 999px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
       background: linear-gradient(90deg, var(--neon-pink), var(--gold-glow));
       color: #000;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .request button:hover {
+    button:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,45,117,0.6);
     }
 
-    .qr-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .qr-box {
+      text-align: center;
+      color: #aaa;
     }
 
-    .qr-wrap img {
-      width: 200px;
-      height: 200px;
-      background: #fff;
-      padding: 0.5rem;
-      border-radius: 12px;
-    }
-
-    .qr-wrap p {
-      margin-top: 1rem;
-      color: #a1a1aa;
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777;
       font-size: 0.9rem;
-      font-style: italic;
     }
   </style>
 </head>
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay">
+  <header class="hero">
+    <div>
       <h1>MANOR BEAUTY BLOC</h1>
-      <p>Beauty Supply • Salon • Self-Care</p>
-      <p class="sub">Scroll to explore the Bloc</p>
+      <p>Scroll to explore the Bloc ✨</p>
     </div>
-  </section>
+  </header>
 
-  <!-- SCROLL CANVAS SECTION -->
-  <section class="scroll-section" id="scrollSection">
-    <div class="canvas-wrap">
-      <canvas id="mbbCanvas"></canvas>
-      <div class="overlay" id="overlayText">
-        <h2>Premium Braiding Hair</h2>
+  <!-- FEATURES / PRODUCTS -->
+  <section class="section-dark">
+    <div class="container">
+      <h2>Our Favorites</h2>
+      <div class="features">
+        <div class="feature-card">
+          <img src="Assets/braiding-hair.jpg" alt="Braiding Hair">
+          <h3>Premium Braiding Hair</h3>
+        </div>
+        <div class="feature-card">
+          <img src="Assets/edge-control.jpg" alt="Edge Control">
+          <h3>Edge Control</h3>
+        </div>
+        <div class="feature-card">
+          <img src="Assets/all-day-locs-gel.jpg" alt="Loc Gel">
+          <h3>All Day Locs Gel</h3>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- REQUEST SECTION -->
-  <section class="request" id="request">
-    <div class="request-inner">
-      <div>
-        <h3>Request Your Style</h3>
-
-        <form id="requestForm">
-          <input type="text" id="name" placeholder="Name" required />
-          <textarea id="vision" placeholder="Tell us your vision..." rows="5" required></textarea>
-          <button type="submit">Submit Request</button>
-        </form>
-      </div>
-
-      <div class="qr-wrap">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://manorbeauty.bloc/request" alt="QR Code">
-        <p>Scan to share the beauty</p>
+  <section>
+    <div class="container">
+      <h2>Request Your Style</h2>
+      <div class="request-grid">
+        <div>
+          <form action="mailto:manorbeautybloc@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input type="email" name="Email" placeholder="Your Email" required />
+            <textarea name="Message" rows="5" placeholder="Tell us your vision..." required></textarea>
+            <button type="submit">Send Request</button>
+          </form>
+        </div>
+        <div class="qr-box">
+          <p>Scan to share the beauty 💖</p>
+          <p style="margin-top:10px; font-size:0.85rem;">(QR can be added here later)</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <footer>
+    © <span id="year"></span> Manor Beauty Bloc • Beauty Supply & Salon
+  </footer>
+
   <script>
-    const canvas = document.getElementById("mbbCanvas");
-    const ctx = canvas.getContext("2d");
-    const overlay = document.getElementById("overlayText");
-    const scrollSection = document.getElementById("scrollSection");
-
-    const frameCount = 120;
-    const images = [];
-    let firstImageLoaded = false;
-
-    function currentFrame(index) {
-      const i = String(index).padStart(3, "0");
-      return `frames/frame_${i}.png`;
-    }
-
-    function resizeCanvas() {
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    function drawImageCover(img) {
-      const cw = canvas.width;
-      const ch = canvas.height;
-      const iw = img.width;
-      const ih = img.height;
-
-      const canvasRatio = cw / ch;
-      const imageRatio = iw / ih;
-
-      let drawWidth, drawHeight, offsetX, offsetY;
-
-      if (imageRatio > canvasRatio) {
-        drawHeight = ch;
-        drawWidth = ch * imageRatio;
-        offsetX = (cw - drawWidth) / 2;
-        offsetY = 0;
-      } else {
-        drawWidth = cw;
-        drawHeight = cw / imageRatio;
-        offsetX = 0;
-        offsetY = (ch - drawHeight) / 2;
-      }
-
-      ctx.clearRect(0, 0, cw, ch);
-      ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-    }
-
-    function drawFrame(index) {
-      const img = images[index];
-      if (!img || !img.complete) {
-        ctx.fillStyle = "#000";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        return;
-      }
-      drawImageCover(img);
-    }
-
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      img.src = currentFrame(i);
-      img.onload = () => {
-        if (!firstImageLoaded) {
-          firstImageLoaded = true;
-          resizeCanvas();
-          drawFrame(0);
-        }
-      };
-      images.push(img);
-    }
-
-    function onScroll() {
-      const rect = scrollSection.getBoundingClientRect();
-      const scrollTop = -rect.top;
-      const scrollHeight = scrollSection.offsetHeight - window.innerHeight;
-      const progress = Math.min(Math.max(scrollTop / scrollHeight, 0), 1);
-
-      const frameIndex = Math.floor(progress * (frameCount - 1));
-      drawFrame(frameIndex);
-
-      if (progress > 0.1 && progress < 0.3) {
-        overlay.style.opacity = (progress - 0.1) / 0.2;
-      } else if (progress >= 0.3) {
-        overlay.style.opacity = 1;
-      } else {
-        overlay.style.opacity = 0;
-      }
-    }
-
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", () => {
-      resizeCanvas();
-      drawFrame(0);
-    });
-
-    const form = document.getElementById("requestForm");
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const vision = document.getElementById("vision").value;
-
-      const subject = encodeURIComponent("New Style Request from " + name);
-      const body = encodeURIComponent("Name: " + name + "\n\nVision:\n" + vision);
-
-      window.location.href = `mailto:manorbeautybloc@gmail.com?subject=${subject}&body=${body}`;
-    });
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
